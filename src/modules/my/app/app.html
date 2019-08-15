@@ -1,24 +1,42 @@
 <template>
     <div class="center greeting quiz">
         <p>Score: {score}</p>
-        <my-question question={currentQuestion}> </my-question>
-        <div if:false={isFirst} class="not-first">
-            <button onclick={goPrevious} class="prev-question-button">
-                Previous
-            </button>
-        </div>
-        <div if:false={isLast} class="not-last">
-            <button onclick={goNext} class="next-question-button">
-                Next Question
-            </button>
-        </div>
-        <button onclick={submitAnswer} class="submit-button">
+        <my-question
+            enable-submit-button={enableSubmitButton}
+            question={currentQuestion}
+        >
+        </my-question>
+        <button disabled onclick={submitAnswer} class="submit-button">
             Submit Answer
         </button>
+        <div class="inline">
+            <button
+                if:false={isFirst}
+                onclick={goPrevious}
+                class="prev-question-button"
+            >
+                Previous
+            </button>
+            <button
+                if:false={isLast}
+                onclick={goNext}
+                class="next-question-button"
+            >
+                Next Question
+            </button>
+            <button if:true={isLast} onclick={setShowResults}>
+                Show results
+            </button>
+        </div>
         <div if:true={showResults} class="quiz-results">
-            <p class="quiz-results-message"></p>
-            <p class="quiz-results-score"></p>
-            <button class="quiz-restart-button"></button>
+            <p class="quiz-results-message">Yay! The quiz is complete.</p>
+            <p class="quiz-results-score">
+                Your score was: {score}. Feel free to retake to get a better
+                score.
+            </p>
+            <button class="quiz-restart-button" onclick={resetQuiz}>
+                Restart quiz
+            </button>
         </div>
     </div>
 </template>

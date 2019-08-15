@@ -2,7 +2,8 @@ import { LightningElement, track } from 'lwc';
 
 export default class App extends LightningElement {
     @track index = 0;
-    @track score = 0; // need track if update during all of the questions
+    @track score = 0;
+    @track showResults = false;
     all_questions = [
         {
             id: 1,
@@ -45,10 +46,7 @@ export default class App extends LightningElement {
                 ]
             }
         }
-    ];
-    get showResults() {
-        return this.index === this.all_questions.length
-    }
+    ]; 
     get currentQuestion() {
         return this.all_questions[this.index];
     }
@@ -64,6 +62,21 @@ export default class App extends LightningElement {
     goPrevious() {
         this.index -= 1;
     }
+    setShowResults() {
+        this.showResults = true;
+    }
+    resetQuiz() {
+        this.index = 0;
+        this.showResults = false;
+    }
+    // need to bind explicitly to this component, instead of to child component
+    enableSubmitButton = () => { 
+        const submitButton = this.template.querySelector('.submit-button');
+        if (submitButton) {
+            submitButton.disabled = false;
+        }
+    }
+
     submitAnswer() {
         // TODO: get the right answer here, or in question component
         const questionElem = this.template.querySelector('my-question');
