@@ -25,11 +25,11 @@ export default class App extends LightningElement {
         },
         {
             id: 3,
-            question_string: 'How many wheels are there on a tricycle?',
-            codepenId: 'eb5s41cp',
+            question_string: 'What gets printed?',
+            codepenId: '8v7t2wn0',
             choices: {
-                correct: 'Three',
-                all: ['One', 'Two', 'Three', 'Four']
+                correct: 'undefined',
+                all: ['woof', 'undefined']
             }
         }
     ];

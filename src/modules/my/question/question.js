@@ -17,7 +17,7 @@ export default class Question extends LightningElement {
     }
     @api hideResult() {
         const codepen = this.template.querySelector('my-code-snippet');
-        codepen.hideResult();        
+        codepen.hideResult();
     }
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-code-snippet');
