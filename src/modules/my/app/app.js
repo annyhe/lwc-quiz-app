@@ -5,7 +5,7 @@ export default class App extends LightningElement {
         {
             id: 1,
             question_string: 'What color is the sky?',
-            codepenId: 'rNBeOwV',
+            codepenId: 'eb5s41cp',
             choices: {
                 correct: 'Blue',
                 all: ['Pink', 'Orange', 'Blue', 'Green']
@@ -14,7 +14,7 @@ export default class App extends LightningElement {
         {
             id: 2,
             question_string: 'Which season is the hottest?',
-            codepenId: 'rNBeOwV',
+            codepenId: 'eb5s41cp',
             choices: {
                 correct: 'Summer',
                 all: ['Winter', 'Autumn', 'Spring', 'Summer']
@@ -23,7 +23,7 @@ export default class App extends LightningElement {
         {
             id: 3,
             question_string: 'How many wheels are there on a tricycle?',
-            codepenId: 'rNBeOwV',
+            codepenId: 'eb5s41cp',
             choices: {
                 correct: 'Three',
                 all: ['One', 'Two', 'Three', 'Four']
@@ -32,7 +32,7 @@ export default class App extends LightningElement {
         {
             id: 4,
             question_string: 'Who is the main character of Harry Potter?',
-            codepenId: 'rNBeOwV',
+            codepenId: 'eb5s41cp',
             choices: {
                 correct: 'Harry Potter',
                 all: [
