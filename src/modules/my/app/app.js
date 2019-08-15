@@ -1,6 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class App extends LightningElement {
+    index = 0;
     all_questions = [
         {
             id: 1,
@@ -45,20 +46,18 @@ export default class App extends LightningElement {
         }
     ];
 
-    submitAnswer(e) {
-        // find the correct answer for the given question
-        // const questionID = e.target.parentElement.dataset.id;
-        // const question = this.all_questions.find(function(_question) {
-        //     return _question.id === parseInt(questionID, 10);
-        // });
-
-        // const correctAnswer = question.choices.correct;
-        // console.log(correctAnswer);
-
-        // TODO: extract this to a separate function for testability
-        const codepen = e.target.parentElement.getElementsByClassName(
-            'codepen'
-        )[0];
-        codepen.seeAnswer();
+    get currentQuestion() {
+        return this.all_questions[this.index];
+    }
+    get isFirst() {
+        return this.index === 0;
+    }
+    get isLast() {
+        return this.index === this.all_questions.length - 1;
+    }
+    submitAnswer() {
+        // TODO: get the right answer here, or in question component
+        const questionElem = this.template.querySelector('my-question');
+        if (questionElem) questionElem.submitAnswer();
     }
 }

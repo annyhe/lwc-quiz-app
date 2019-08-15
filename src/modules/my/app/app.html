@@ -1,40 +1,15 @@
 <template>
-    <!-- loop over all questions -->
-    <div class="center greeting">
-        <template iterator:it={all_questions}>
-            <div
-                key={it.value.Id}
-                class="quiz-container quiz"
-                data-id={it.value.id}
-            >
-                <h1 class="quiz-name">{it.value.question_string}</h1>
-                <div if:true={it.value.codepenId}>
-                    <my-greeting
-                        class="codepen"
-                        codepen-id={it.value.codepenId}
-                    ></my-greeting>
-                </div>
-                <template for:each={it.value.choices.all} for:item="choice">
-                    <div class="radio" key={choice}>
-                        <input type="radio" id={choice} name="radio" />
-                        <label for={choice}>
-                            <div class="checker"></div>
-                            {choice}
-                        </label>
-                    </div>
-                </template>
-                <button onclick={submitAnswer} class="submit-button">
-                    Submit Answer
-                </button>
-                <div if:false={it.first} class="not-first">
-                    <button class="prev-question-button">Previous</button>
-                </div>
-                <div if:false={it.last} class="not-last">
-                    <button class="next-question-button">Next Question</button>
-                </div>
-            </div>
-        </template>
-
+    <div class="center greeting quiz">
+        <my-question question={currentQuestion}> </my-question>
+        <div if:false={isFirst} class="not-first">
+            <button class="prev-question-button">Previous</button>
+        </div>
+        <div if:false={isLast} class="not-last">
+            <button class="next-question-button">Next Question</button>
+        </div>
+        <button onclick={submitAnswer} class="submit-button">
+            Submit Answer
+        </button>
         <!-- <div class="quiz-results">
                 <p class="quiz-results-message"></p>
                 <p class="quiz-results-score"></p>

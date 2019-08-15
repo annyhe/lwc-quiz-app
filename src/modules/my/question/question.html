@@ -1,0 +1,20 @@
+<template>
+    <div class="quiz-container quiz" data-id={question.id}>
+        <h1 class="quiz-name">{question.question_string}</h1>
+        <div if:true={question.codepenId}>
+            <my-greeting
+                class="codepen"
+                codepen-id={question.codepenId}
+            ></my-greeting>
+        </div>
+        <template for:each={question.choices.all} for:item="choice">
+            <div class="radio" key={choice}>
+                <input type="radio" id={choice} name="radio" />
+                <label for={choice}>
+                    <div class="checker"></div>
+                    {choice}
+                </label>
+            </div>
+        </template>
+    </div>
+</template>
