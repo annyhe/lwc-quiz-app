@@ -4,8 +4,10 @@ export default class App extends LightningElement {
     @track index = 0;
     @track score = 0;
     @track showResults = false;
+    // TODO: move this into a json file, or load it remotely
     all_questions = [
         {
+            // TODO: remove ID, have it dynamically added
             id: 1,
             question_string: 'Which variable is modified in-place, or both?',
             codepenId: 'eb5s41cp',
