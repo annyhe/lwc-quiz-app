@@ -47,6 +47,9 @@ export default class App extends LightningElement {
             }
         }
     ];
+    get scoreOutOfTotal() {
+        return '' + this.score + '/' + this.all_questions.length;
+    }
     get currentQuestion() {
         return this.all_questions[this.index];
     }
@@ -66,11 +69,12 @@ export default class App extends LightningElement {
         this.showResults = true;
     }
     resetQuiz() {
+        this.score = 0;
         this.index = 0;
         this.showResults = false;
     }
     // need to bind explicitly to this component, instead of to child component
-    toggleSubmitButton = (enable) => {
+    toggleSubmitButton = enable => {
         const submitButton = this.template.querySelector('.submit-button');
         if (submitButton) {
             submitButton.disabled = !enable;
