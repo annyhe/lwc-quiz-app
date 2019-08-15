@@ -2,10 +2,10 @@
     <div class="center greeting quiz">
         <my-question question={currentQuestion}> </my-question>
         <div if:false={isFirst} class="not-first">
-            <button class="prev-question-button">Previous</button>
+            <button onclick={goPrevious} class="prev-question-button">Previous</button>
         </div>
         <div if:false={isLast} class="not-last">
-            <button class="next-question-button">Next Question</button>
+            <button onclick={goNext} class="next-question-button">Next Question</button>
         </div>
         <button onclick={submitAnswer} class="submit-button">
             Submit Answer

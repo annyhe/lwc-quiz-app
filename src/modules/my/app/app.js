@@ -1,7 +1,7 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track } from 'lwc';
 
 export default class App extends LightningElement {
-    index = 0;
+    @track index = 0;
     all_questions = [
         {
             id: 1,
@@ -55,6 +55,12 @@ export default class App extends LightningElement {
     get isLast() {
         return this.index === this.all_questions.length - 1;
     }
+    goNext() {
+        this.index += 1;
+    }
+    goPrevious() {
+        this.index -= 1;
+    } 
     submitAnswer() {
         // TODO: get the right answer here, or in question component
         const questionElem = this.template.querySelector('my-question');
