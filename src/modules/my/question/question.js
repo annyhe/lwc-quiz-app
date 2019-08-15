@@ -6,7 +6,7 @@ export default class Question extends LightningElement {
     @track showAnswer = false;
     @track answer;
 
-    // need to track question index changes. if there's a change, showAnswer = false;
+    // need to track question changes. if there's a change, showAnswer = false;
     @api
     get question() {
         return this._question;
@@ -15,9 +15,12 @@ export default class Question extends LightningElement {
         this._question = value;
         this.showAnswer = false;
     }
-
+    @api hideResult() {
+        const codepen = this.template.querySelector('my-code-snippet');
+        codepen.hideResult();        
+    }
     @api showCodeSnippetResult() {
-        const codepen = this.template.querySelector('my-greeting');
+        const codepen = this.template.querySelector('my-code-snippet');
         codepen.seeAnswer();
     }
 

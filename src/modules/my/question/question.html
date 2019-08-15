@@ -2,10 +2,10 @@
     <div class="quiz-container quiz" data-id={question.id}>
         <h1 class="quiz-name">{question.question_string}</h1>
         <div if:true={question.codepenId}>
-            <my-greeting
+            <my-code-snippet
                 class="codepen"
                 codepen-id={question.codepenId}
-            ></my-greeting>
+            ></my-code-snippet>
         </div>
         <template for:each={question.choices.all} for:item="choice">
             <div class="radio" key={choice}>

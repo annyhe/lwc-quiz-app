@@ -7,20 +7,20 @@ export default class App extends LightningElement {
     all_questions = [
         {
             id: 1,
-            question_string: 'What color is the sky?',
+            question_string: 'Which variable is modified in-place, or both?',
             codepenId: 'eb5s41cp',
             choices: {
-                correct: 'Blue',
-                all: ['Pink', 'Orange', 'Blue', 'Green']
+                correct: 'both',
+                all: ['x', 'y', 'both']
             }
         },
         {
             id: 2,
-            question_string: 'Which season is the hottest?',
-            codepenId: 'eb5s41cp',
+            question_string: 'Which function can be called without error?',
+            codepenId: 'pr21uw0n',
             choices: {
-                correct: 'Summer',
-                all: ['Winter', 'Autumn', 'Spring', 'Summer']
+                correct: 'hello',
+                all: ['hello2', 'hello', 'both']
             }
         },
         {
@@ -30,20 +30,6 @@ export default class App extends LightningElement {
             choices: {
                 correct: 'Three',
                 all: ['One', 'Two', 'Three', 'Four']
-            }
-        },
-        {
-            id: 4,
-            question_string: 'Who is the main character of Harry Potter?',
-            codepenId: 'eb5s41cp',
-            choices: {
-                correct: 'Harry Potter',
-                all: [
-                    'Harry Potter',
-                    'Hermione Granger',
-                    'Ron Weasley',
-                    'Voldemort'
-                ]
             }
         }
     ];
@@ -78,6 +64,11 @@ export default class App extends LightningElement {
         this.score = 0;
         this.index = 0;
         this.showResults = false;
+        // reset all questions to hide code snippet results
+        const questionElem = this.template.querySelector('my-question');
+        if (questionElem) {
+            questionElem.hideResult();
+        }
     }
     // need to bind explicitly to this component, instead of to child component
     toggleSubmitButton = enable => {
