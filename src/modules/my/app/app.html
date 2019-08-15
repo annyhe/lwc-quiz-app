@@ -1,6 +1,25 @@
 <template>
-    <!-- LWC sample component <my-greeting> -->
+    <!-- loop over all questions -->
     <div class="center greeting">
-        <my-greeting></my-greeting>
-    </div> 
+            <template for:each={all_questions} for:item='question'>
+        <div key={question.question_string} class="quiz-container quiz">
+            <h1 class="quiz-name">{question.question_string}</h1>
+            <h1 class="quiz-name">{question.choices.wrong}</h1>
+            <my-greeting></my-greeting>
+            <template for:each={question.choices.all} for:item='choice'>
+                <p key={choice}>{choice}</p>
+                </template>
+            <button class="submit-button">Submit Answers</button>
+            <button class="next-question-button">Next Question</button>
+            <button class="prev-question-button">Previous</button>
+
+            <!-- <div class="quiz-results">
+                <p class="quiz-results-message"></p>
+                <p class="quiz-results-score"></p>
+                <button class="quiz-restart-button"></button>
+            </div> -->
+        </div>
+    </template>    
+
+    </div>
 </template>
