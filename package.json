@@ -41,6 +41,7 @@
         "lint": "eslint ./src/**/*.js",
         "prettier": "prettier --write '**/*.{css,html,js,json,md,yaml,yml}'",
         "prettier:verify": "prettier --list-different '**/*.{css,html,js,json,md,yaml,yml}'",
+        "start": "npm run build && npm run serve",
         "serve": "lwc-services serve",
         "test:unit": "lwc-services test",
         "test:unit:coverage": "lwc-services test --coverage",

@@ -2,7 +2,7 @@
     "name": "lwc-quiz-app",
     "description": "Quiz App",
     "repository": "https://github.com/annyhe/lwc-quiz-app",
-    "scripts": {}, 
+    "scripts": {},
     "formation": {
         "web": {
             "quantity": 1
