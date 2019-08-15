@@ -5,7 +5,7 @@ export default class Greeting extends LightningElement {
     @api codepenId;
     get resultUrl() {
         const suffix = this.showResult ? 'result,js' : 'js';
-        return '//jsfiddle.net/annyh/' + this.codepenId + '/embedded/' + suffix; 
+        return '//jsfiddle.net/annyh/' + this.codepenId + '/embedded/' + suffix;
     }
 
     @api seeAnswer() {
