@@ -9,7 +9,12 @@
         </div>
         <template for:each={question.choices.all} for:item="choice">
             <div class="radio" key={choice}>
-                <input type="radio" id={choice} onclick={enableSubmitButton} name="radio" />
+                <input
+                    type="radio"
+                    id={choice}
+                    onclick={enableSubmitButton}
+                    name="radio"
+                />
                 <label for={choice}>
                     <div class="checker"></div>
                     {choice}

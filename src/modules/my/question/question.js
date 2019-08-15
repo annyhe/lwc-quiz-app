@@ -3,7 +3,7 @@ import { LightningElement, api } from 'lwc';
 export default class Question extends LightningElement {
     @api question;
     @api enableSubmitButton;
-    
+
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-greeting');
         codepen.seeAnswer();

@@ -46,7 +46,7 @@ export default class App extends LightningElement {
                 ]
             }
         }
-    ]; 
+    ];
     get currentQuestion() {
         return this.all_questions[this.index];
     }
@@ -70,12 +70,12 @@ export default class App extends LightningElement {
         this.showResults = false;
     }
     // need to bind explicitly to this component, instead of to child component
-    enableSubmitButton = () => { 
+    toggleSubmitButton = (enable) => {
         const submitButton = this.template.querySelector('.submit-button');
         if (submitButton) {
-            submitButton.disabled = false;
+            submitButton.disabled = !enable;
         }
-    }
+    };
 
     submitAnswer() {
         // TODO: get the right answer here, or in question component
@@ -86,6 +86,7 @@ export default class App extends LightningElement {
                 this.score += 1;
             }
             questionElem.showCodeSnippetResult();
+            this.toggleSubmitButton();
         }
     }
 }
