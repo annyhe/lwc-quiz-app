@@ -1,19 +1,24 @@
 <template>
     <div class="center greeting quiz">
+        <p>Score: {score}</p>
         <my-question question={currentQuestion}> </my-question>
         <div if:false={isFirst} class="not-first">
-            <button onclick={goPrevious} class="prev-question-button">Previous</button>
+            <button onclick={goPrevious} class="prev-question-button">
+                Previous
+            </button>
         </div>
         <div if:false={isLast} class="not-last">
-            <button onclick={goNext} class="next-question-button">Next Question</button>
+            <button onclick={goNext} class="next-question-button">
+                Next Question
+            </button>
         </div>
         <button onclick={submitAnswer} class="submit-button">
             Submit Answer
         </button>
-        <!-- <div class="quiz-results">
-                <p class="quiz-results-message"></p>
-                <p class="quiz-results-score"></p>
-                <button class="quiz-restart-button"></button>
-            </div> -->
+        <div if:true={showResults} class="quiz-results">
+            <p class="quiz-results-message"></p>
+            <p class="quiz-results-score"></p>
+            <button class="quiz-restart-button"></button>
+        </div>
     </div>
 </template>

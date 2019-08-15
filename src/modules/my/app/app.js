@@ -2,6 +2,7 @@ import { LightningElement, track } from 'lwc';
 
 export default class App extends LightningElement {
     @track index = 0;
+    @track score = 0; // need track if update during all of the questions
     all_questions = [
         {
             id: 1,
@@ -45,7 +46,9 @@ export default class App extends LightningElement {
             }
         }
     ];
-
+    get showResults() {
+        return this.index === this.all_questions.length
+    }
     get currentQuestion() {
         return this.all_questions[this.index];
     }
@@ -60,10 +63,16 @@ export default class App extends LightningElement {
     }
     goPrevious() {
         this.index -= 1;
-    } 
+    }
     submitAnswer() {
         // TODO: get the right answer here, or in question component
         const questionElem = this.template.querySelector('my-question');
-        if (questionElem) questionElem.submitAnswer();
+        if (questionElem) {
+            const [submittedAnswer, correctAnswer] = questionElem.getAnswer();
+            if (submittedAnswer === correctAnswer) {
+                this.score += 1;
+            }
+            questionElem.showCodeSnippetResult();
+        }
     }
 }
