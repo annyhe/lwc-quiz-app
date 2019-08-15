@@ -2,12 +2,12 @@ import { LightningElement, track, api } from 'lwc';
 
 export default class Greeting extends LightningElement {
     @track showResult;
-    @api codepenID = 'rNBeOwV';
+    @api codepenId = 'rNBeOwV';
     get resultUrl() {
         const suffix = this.showResult ? ',result' : '';
         return (
             '//codepen.io/annyhe/embed/' +
-            this.codepenID +
+            this.codepenId +
             '/?height=265&theme-id=0&default-tab=js' +
             suffix
         );

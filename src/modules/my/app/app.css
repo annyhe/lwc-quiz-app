@@ -1,147 +1,205 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font: 16px 'Source Sans Pro', sans-serif;
-  border: none;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font: 16px 'Source Sans Pro', sans-serif;
+    border: none;
+    box-sizing: border-box;
 }
 
-html, body {
-  background: #eee;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-
-html {
-  display: table;
-}
-
+html,
 body {
-  display: table-cell;
-  vertical-align: middle;
-}
-
+    background: #eee;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+} 
 .quiz {
-  margin: -44px 50px 0px;
-  position: relative;
-  width: calc(100% - 100px);
+    margin: 0 50px 0px;
+    position: relative;
 }
 
 .quiz h1 {
-  color: #4d4d4d;
-  font-weight: 600;
-  font-size: 36px;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 144px;
+    color: #4d4d4d;
+    font-weight: 600;
+    font-size: 36px;
+    text-transform: uppercase;
 }
 
 .quiz button {
-  float: right;
-  margin: 8px 0px 0px 8px;
-  padding: 4px 8px;
-  background: #145b78;
-  color: #eee;
-  font-size: 14px;
-  cursor: pointer;
-  outline: none;
+    float: right;
+    margin: 8px 0px 0px 8px;
+    padding: 4px 8px;
+    background: #145b78;
+    color: #eee;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
 }
 
 .quiz button:hover {
-  background: #1f8dba;
-  color: white;
+    background: #1f8dba;
+    color: white;
 }
 
 .quiz button:disabled {
-  opacity: 0.7;
-  background: #1b7ca4;
-  cursor: default;
+    opacity: 0.7;
+    background: #1b7ca4;
+    cursor: default;
 }
 
 .question {
-  padding: 20px;
-  background: lighten blue, 5%;
+    padding: 20px;
+    background: lighten blue, 5%;
 }
 
 .question h2 {
-  margin-bottom: 16px;
-  font-weight: 600;
-  font-size: 20px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 20px;
 }
 
-.question input[type=radio] {
-  display: none;
+.question input[type='radio'] {
+    display: none;
 }
 
 .question label {
-  display: inline-block;
-  margin: 4px;
-  padding: 8px;
-  background: #145b78;
-  color: #eee;
-  width: calc(50% - 8px);
-  min-width: 100px;
-  cursor: pointer;
+    display: inline-block;
+    margin: 4px;
+    padding: 8px;
+    background: #145b78;
+    color: #eee;
+    width: calc(50% - 8px);
+    min-width: 100px;
+    cursor: pointer;
 }
 
 .question label:hover {
-  background: #1f8dba;
+    background: #1f8dba;
 }
 
-.question input[type=radio]:checked + label {
-  background: dodgerblue;
-  color: white;
-  box-shadow: inset 0px 0px 10px 2px dodgerblue, 0px 0px 10px 2px #006ad1;
-  -webkit-animation: pulse 1s alternate infinite;
-          animation: pulse 1s alternate infinite;
+.question input[type='radio']:checked + label {
+    background: dodgerblue;
+    color: white;
+    box-shadow: inset 0px 0px 10px 2px dodgerblue, 0px 0px 10px 2px #006ad1;
+    -webkit-animation: pulse 1s alternate infinite;
+    animation: pulse 1s alternate infinite;
 }
 
 .quiz-results {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  top: 44px;
-  left: 0px;
-  background: #FAFAFA;
-  width: 100%;
-  height: calc(100% - 44px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    background: #fafafa;
+    width: 100%;
+    height: calc(100% - 44px);
 }
 
 .quiz-results-message {
-  display: block;
-  color: #00403C;
-  font-size: 20px;
-  font-weight: bold;
+    display: block;
+    color: #00403c;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .quiz-results-score {
-  display: block;
-  color: #31706c;
-  font-size: 20px;
+    display: block;
+    color: #31706c;
+    font-size: 20px;
 }
 
 .quiz-results-score b {
-  color: #00403C;
-  font-weight: 600;
-  font-size: 20px;
+    color: #00403c;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 @-webkit-keyframes pulse {
-  0% {
-    box-shadow: 0px 0px 5px 2px rgba(20, 205, 240, 0.3);
-  }
-  100% {
-    box-shadow: 0px 0px 15px 2px deepskyblue;
-  }
+    0% {
+        box-shadow: 0px 0px 5px 2px rgba(20, 205, 240, 0.3);
+    }
+    100% {
+        box-shadow: 0px 0px 15px 2px deepskyblue;
+    }
 }
 
 @keyframes pulse {
-  0% {
-    box-shadow: 0px 0px 5px 2px rgba(20, 205, 240, 0.3);
+    0% {
+        box-shadow: 0px 0px 5px 2px rgba(20, 205, 240, 0.3);
+    }
+    100% {
+        box-shadow: 0px 0px 15px 2px deepskyblue;
+    }
+}
+
+/* radio buttons */
+/* 
+  Inspired by https://dribbble.com/shots/6544191-Radio-Buttons
+*/
+*,
+*::before *::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 100%;
+  font-family: 'Montserrat', 'Roboto', sans-serif;
+  color: #333;
+  font-weight: 400;
+}
+.radios {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 640px) {
+  .radios {
+    flex-direction: column;
   }
-  100% {
-    box-shadow: 0px 0px 15px 2px deepskyblue;
-  }
+}
+.radio input {
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+}
+.radio input:focus + label {
+  background: #eeeeff;
+}
+.radio input:focus + label .checker {
+  border-color: #6666ff;
+}
+.radio input:checked + label .checker {
+  box-shadow: inset 0 0 0 6px #6666ff;
+}
+.radio label {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  border-radius: 14px;
+  margin: 10px;
+  padding: 0 8px 0 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.radio label:hover {
+  background: #eeeeff;
+}
+.radio label:hover .checker {
+  box-shadow: inset 0 0 0 2px #6666ff;
+}
+.radio .checker {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 8px;
+  box-shadow: inset 0 0 0 2px #ccc;
+  transition: box-shadow 0.3s ease;
 }
