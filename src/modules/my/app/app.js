@@ -59,6 +59,12 @@ export default class App extends LightningElement {
     get isLast() {
         return this.index === this.all_questions.length - 1;
     }
+    get displayIndex() {
+        return this.index + 1;
+    }
+    get countTotalQuestions() {
+        return this.all_questions.length;
+    }
     goNext() {
         this.index += 1;
     }

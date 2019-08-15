@@ -14,8 +14,8 @@ export default class Question extends LightningElement {
     set question(value) {
         this._question = value;
         this.showAnswer = false;
-    } 
-    
+    }
+
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-greeting');
         codepen.seeAnswer();

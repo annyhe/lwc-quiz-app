@@ -1,6 +1,6 @@
 <template>
     <div class="center greeting quiz">
-        <p>Score: {score}</p>
+        <p>{displayIndex}/{countTotalQuestions} questions</p>
         <my-question
             enable-submit-button={toggleSubmitButton}
             question={currentQuestion}
@@ -31,8 +31,8 @@
         <div if:true={showResults} class="quiz-results">
             <p class="quiz-results-message">Yay you're done!</p>
             <p class="quiz-results-score">
-                Your score was: {scoreOutOfTotal}. Feel free to retake to get a better
-                score.
+                Your score was: {scoreOutOfTotal}. Feel free to retake to get a
+                better score.
             </p>
             <button class="quiz-restart-button" onclick={resetQuiz}>
                 Retake quiz
