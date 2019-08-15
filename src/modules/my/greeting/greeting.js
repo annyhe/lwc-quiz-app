@@ -13,7 +13,7 @@ export default class Greeting extends LightningElement {
         );
     }
 
-    seeAnswer() {
+    @api seeAnswer() {
         this.showResult = true;
     }
 }

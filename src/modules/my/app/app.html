@@ -1,14 +1,20 @@
 <template>
     <!-- loop over all questions -->
     <div class="center greeting">
-        <template for:each={all_questions} for:item="question">
-            <div key={question.question_string} class="quiz-container quiz">
-                <h1 class="quiz-name">{question.question_string}</h1>
-                <div if:true={question.codepenId}>
-                    <my-greeting codepen-id={question.codepenId}></my-greeting>
+        <template iterator:it={all_questions}>
+            <div
+                key={it.value.Id}
+                class="quiz-container quiz"
+                data-id={it.value.id}
+            >
+                <h1 class="quiz-name">{it.value.question_string}</h1>
+                <div if:true={it.value.codepenId}>
+                    <my-greeting
+                        class="codepen"
+                        codepen-id={it.value.codepenId}
+                    ></my-greeting>
                 </div>
-                <!-- TODO: extract for separate component, for testability -->
-                <template for:each={question.choices.all} for:item="choice">
+                <template for:each={it.value.choices.all} for:item="choice">
                     <div class="radio" key={choice}>
                         <input type="radio" id={choice} name="radio" />
                         <label for={choice}>
@@ -17,15 +23,22 @@
                         </label>
                     </div>
                 </template>
-                <button class="submit-button">Submit Answer</button>
-                <button class="next-question-button">Next Question</button>
-                <button class="prev-question-button">Previous</button>
+                <button onclick={submitAnswer} class="submit-button">
+                    Submit Answer
+                </button>
+                <div if:false={it.first} class="not-first">
+                    <button class="prev-question-button">Previous</button>
+                </div>
+                <div if:false={it.last} class="not-last">
+                    <button class="next-question-button">Next Question</button>
+                </div>
             </div>
         </template>
-                <!-- <div class="quiz-results">
+
+        <!-- <div class="quiz-results">
                 <p class="quiz-results-message"></p>
                 <p class="quiz-results-score"></p>
                 <button class="quiz-restart-button"></button>
-            </div> -->        
+            </div> -->
     </div>
 </template>
