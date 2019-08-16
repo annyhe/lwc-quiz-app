@@ -8,9 +8,9 @@
         </my-question>
 
         <div class="inline">
-                <button disabled onclick={submitAnswer} class="submit-button">
-                        Submit Answer
-                    </button>            
+            <button disabled onclick={submitAnswer} class="submit-button">
+                Submit Answer
+            </button>
             <button
                 if:false={isFirst}
                 onclick={goPrevious}
@@ -29,11 +29,14 @@
                 Show results
             </button>
         </div>
-        <div if:true={showResults} class="quiz-results">
+        <div if:true={showQuizResults} class="quiz-results">
             <p class="quiz-results-message">Yay you're done!</p>
             <p class="quiz-results-score">
-                Your score was: {scoreOutOfTotal}. Feel free to retake to get a
-                better score.
+                Your score was: {scoreOutOfTotal}.
+                <span if:true={lowerThanFullScore}
+                    >Feel free to retake to get a better score.</span
+                >
+                <span if:false={lowerThanFullScore}>You got top marks!</span>
             </p>
             <button class="quiz-restart-button" onclick={resetQuiz}>
                 Retake quiz

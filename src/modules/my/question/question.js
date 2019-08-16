@@ -22,6 +22,12 @@ export default class Question extends LightningElement {
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-code-snippet');
         codepen.seeAnswer();
+        // TODO: move to separate method: disableRadioButtons()
+        [...this.template.querySelectorAll('input[type="radio"]')].forEach(
+            radioElem => {
+                radioElem.disabled = true;
+            }
+        );
     }
 
     @api getAnswer() {

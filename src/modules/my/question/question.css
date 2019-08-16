@@ -59,6 +59,10 @@ body {
 .radio label:hover .checker {
     box-shadow: inset 0 0 0 2px #6666ff;
 }
+/* gray out disabled radio button */
+:disabled + label .checker {
+    background: #aaa;
+}
 .radio .checker {
     width: 18px;
     height: 18px;

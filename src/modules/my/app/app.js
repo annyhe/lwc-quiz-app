@@ -3,7 +3,7 @@ import { LightningElement, track } from 'lwc';
 export default class App extends LightningElement {
     @track index = 0;
     @track score = 0;
-    @track showResults = false;
+    @track showQuizResults = false;
     // TODO: move this into a json file, or load it remotely
     all_questions = [
         {
@@ -35,6 +35,9 @@ export default class App extends LightningElement {
             }
         }
     ];
+    get lowerThanFullScore() {
+        return this.score < this.all_questions.length;
+    }
     get scoreOutOfTotal() {
         return '' + this.score + '/' + this.all_questions.length;
     }
@@ -60,13 +63,17 @@ export default class App extends LightningElement {
         this.index -= 1;
     }
     setShowResults() {
-        this.showResults = true;
+        this.showQuizResults = true;
     }
     resetQuiz() {
         this.score = 0;
         this.index = 0;
-        this.showResults = false;
-        // reset all questions to hide code snippet results
+        this.showQuizResults = false;
+        // reset all questions 
+        this.all_questions.forEach((question) => {
+            question.answer = undefined;
+        });
+        // hide code snippet results
         const questionElem = this.template.querySelector('my-question');
         if (questionElem) {
             questionElem.hideResult();
@@ -91,8 +98,8 @@ export default class App extends LightningElement {
                     this.all_questions[this.index].answer = {
                         submittedAnswer,
                         correctAnswer
-                    };                    
-                } 
+                    };
+                }
             }
             questionElem.showCodeSnippetResult();
             this.toggleSubmitButton();
