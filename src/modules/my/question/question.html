@@ -7,9 +7,19 @@
                 codepen-id={question.codepenId}
             ></my-code-snippet>
         </div>
-        <template for:each={question.choices.all} for:item="choice">
+        <template for:each={unselectedChoices} for:item="choice">
             <div class="radio" key={choice}>
+                <!-- if answered, disable the unselected choices -->
                 <input
+                    if:true={isAnswerDefined}
+                    disabled
+                    type="radio"
+                    id={choice}
+                    onclick={enableSubmitButton}
+                    name="radio"
+                />
+                <input
+                    if:false={isAnswerDefined}
                     type="radio"
                     id={choice}
                     onclick={enableSubmitButton}
@@ -21,6 +31,23 @@
                 </label>
             </div>
         </template>
+        <div
+            if:true={isAnswerDefined}
+            class="radio"
+            key={question.answer.submittedAnswer}
+        >
+            <input
+                type="radio"
+                id={question.answer.submittedAnswer}
+                onclick={enableSubmitButton}
+                name="radio"
+                checked
+            />
+            <label for={question.answer.submittedAnswer}>
+                <div class="checker"></div>
+                {question.answer.submittedAnswer}
+            </label>
+        </div>
         <p if:true={showAnswer}>{answer}</p>
     </div>
 </template>
