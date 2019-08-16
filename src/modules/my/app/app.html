@@ -6,10 +6,11 @@
             question={currentQuestion}
         >
         </my-question>
-        <button disabled onclick={submitAnswer} class="submit-button">
-            Submit Answer
-        </button>
+
         <div class="inline">
+                <button disabled onclick={submitAnswer} class="submit-button">
+                        Submit Answer
+                    </button>            
             <button
                 if:false={isFirst}
                 onclick={goPrevious}

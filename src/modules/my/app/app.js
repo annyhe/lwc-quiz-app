@@ -81,12 +81,18 @@ export default class App extends LightningElement {
     };
 
     submitAnswer() {
-        // TODO: get the right answer here, or in question component
         const questionElem = this.template.querySelector('my-question');
         if (questionElem) {
             const [submittedAnswer, correctAnswer] = questionElem.getAnswer();
-            if (submittedAnswer === correctAnswer) {
-                this.score += 1;
+            // missing answer
+            if (this.all_questions[this.index].answer === undefined) {
+                if (submittedAnswer === correctAnswer) {
+                    this.score += 1;
+                    this.all_questions[this.index].answer = {
+                        submittedAnswer,
+                        correctAnswer
+                    };                    
+                } 
             }
             questionElem.showCodeSnippetResult();
             this.toggleSubmitButton();
