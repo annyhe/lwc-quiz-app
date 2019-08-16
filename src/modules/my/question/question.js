@@ -23,6 +23,10 @@ export default class Question extends LightningElement {
         return this._question;
     }
     set question(value) {
+        // uncheck all the radio buttons
+        [...this.template.querySelectorAll('input[type="radio"]')].forEach((radioElem) => {
+            radioElem.checked = false; 
+        });
         this._question = value;
         this.showAnswer = false;
     }
