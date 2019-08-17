@@ -69,8 +69,8 @@ export default class App extends LightningElement {
         this.score = 0;
         this.index = 0;
         this.showQuizResults = false;
-        // reset all questions 
-        this.all_questions.forEach((question) => {
+        // reset all questions
+        this.all_questions.forEach(question => {
             question.answer = undefined;
         });
         // hide code snippet results
@@ -95,12 +95,12 @@ export default class App extends LightningElement {
             if (this.all_questions[this.index].answer === undefined) {
                 if (submittedAnswer === correctAnswer) {
                     this.score += 1;
-                    this.all_questions[this.index].answer = {
-                        submittedAnswer,
-                        correctAnswer
-                    };
                 }
-            }
+                this.all_questions[this.index].answer = {
+                    submittedAnswer,
+                    correctAnswer
+                };
+            } 
             questionElem.showCodeSnippetResult();
             this.toggleSubmitButton();
         }
