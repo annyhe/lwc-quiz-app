@@ -8,7 +8,7 @@
             ></my-code-snippet>
         </div>
         <template for:each={unselectedChoices} for:item="choice">
-            <div class="radio" key={choice}>
+            <div class="radio" key={uniqueKey}>
                 <!-- if answered, disable the unselected choices -->
                 <input
                     if:true={isAnswerDefined}

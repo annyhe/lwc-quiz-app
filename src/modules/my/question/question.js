@@ -5,13 +5,16 @@ export default class Question extends LightningElement {
     @api enableSubmitButton;
     @track showAnswer = false;
     @track answer;
-
+    get uniqueKey() {
+        return parseInt(Math.random() * 1000, 10);
+    }
     // to disable radio buttons
     get unselectedChoices() {
         if (!this.question.answer) return this.question.choices.all;
         const _unselectedChoices = this.question.choices.all.filter(
             choice => choice !== this.question.answer.submittedAnswer
         );
+
         return _unselectedChoices;
     }
     get isAnswerDefined() {
