@@ -4,11 +4,14 @@ export default class Question extends LightningElement {
     @api _question;
     @api enableSubmitButton;
     @track showAnswer = false;
-    @track answer;
+    @track answeredCorrectly;
+
+    // ensure choices are unique
     get uniqueKey() {
         return parseInt(Math.random() * 1000, 10);
     }
-    // to disable radio buttons
+
+    // disable choices for answered questions
     get unselectedChoices() {
         if (!this.question.answer) return this.question.choices.all;
         const _unselectedChoices = this.question.choices.all.filter(
@@ -17,29 +20,27 @@ export default class Question extends LightningElement {
 
         return _unselectedChoices;
     }
+
     get isAnswerDefined() {
         return this.question.answer !== undefined;
     }
+    
     // need to track question changes. if there's a change, showAnswer = false;
     @api
     get question() {
         return this._question;
     }
-    set question(value) {
-        // uncheck all the radio buttons
-        [...this.template.querySelectorAll('input[type="radio"]')].forEach(
-            radioElem => {
-                radioElem.checked = false;
-                radioElem.disabled = false;
-            }
-        );
+    
+    set question(value) { 
         this._question = value;
         this.showAnswer = false;
     }
+    
     @api hideResult() {
         const codepen = this.template.querySelector('my-code-snippet');
         codepen.hideResult();
     }
+    
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-code-snippet');
         codepen.seeAnswer();
@@ -53,12 +54,11 @@ export default class Question extends LightningElement {
 
     @api getAnswer() {
         const correctAnswer = this.question.choices.correct;
-
         const radioElems = [...this.template.querySelectorAll('[type=radio]')];
         const selectedRadio = radioElems.find(elem => elem.checked);
         let submittedAnswer = selectedRadio.parentElement.textContent || '';
         this.showAnswer = true;
-        this.answer = submittedAnswer === correctAnswer;
+        this.answeredCorrectly = submittedAnswer === correctAnswer;
         return [submittedAnswer, correctAnswer];
     }
 }

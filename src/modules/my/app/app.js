@@ -1,5 +1,5 @@
 import { LightningElement, track } from 'lwc';
-import allQuestions from '../../../../data/allQuestions.json'
+import allQuestions from '../../../../data/allQuestions.json';
 export default class App extends LightningElement {
     @track index = 0;
     @track score = 0;
@@ -71,7 +71,7 @@ export default class App extends LightningElement {
                     submittedAnswer,
                     correctAnswer
                 };
-            } 
+            }
             questionElem.showCodeSnippetResult();
             this.toggleSubmitButton();
         }

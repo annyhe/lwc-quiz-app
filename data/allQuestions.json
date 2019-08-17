@@ -5,11 +5,7 @@
         "codepenId": "eb5s41cp",
         "choices": {
             "correct": "both",
-            "all": [
-                "x",
-                "y",
-                "both"
-            ]
+            "all": ["x", "y", "both"]
         }
     },
     {
@@ -18,11 +14,7 @@
         "codepenId": "pr21uw0n",
         "choices": {
             "correct": "hello",
-            "all": [
-                "hello2",
-                "hello",
-                "both"
-            ]
+            "all": ["hello2", "hello", "both"]
         }
     },
     {
@@ -31,10 +23,7 @@
         "codepenId": "8v7t2wn0",
         "choices": {
             "correct": "undefined",
-            "all": [
-                "woof",
-                "undefined"
-            ]
+            "all": ["woof", "undefined"]
         }
     }
 ]
