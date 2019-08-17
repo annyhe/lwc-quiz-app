@@ -1,40 +1,11 @@
 import { LightningElement, track } from 'lwc';
-
+import allQuestions from '../../../../data/allQuestions.json'
 export default class App extends LightningElement {
     @track index = 0;
     @track score = 0;
     @track showQuizResults = false;
     // TODO: move this into a json file, or load it remotely
-    all_questions = [
-        {
-            // TODO: remove ID, have it dynamically added
-            id: 1,
-            question_string: 'Which variable is modified in-place, or both?',
-            codepenId: 'eb5s41cp',
-            choices: {
-                correct: 'both',
-                all: ['x', 'y', 'both']
-            }
-        },
-        {
-            id: 2,
-            question_string: 'Which function can be called without error?',
-            codepenId: 'pr21uw0n',
-            choices: {
-                correct: 'hello',
-                all: ['hello2', 'hello', 'both']
-            }
-        },
-        {
-            id: 3,
-            question_string: 'What gets printed?',
-            codepenId: '8v7t2wn0',
-            choices: {
-                correct: 'undefined',
-                all: ['woof', 'undefined']
-            }
-        }
-    ];
+    all_questions = allQuestions;
     get lowerThanFullScore() {
         return this.score < this.all_questions.length;
     }
