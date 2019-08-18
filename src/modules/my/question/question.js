@@ -4,18 +4,18 @@ export default class Question extends LightningElement {
     @api _question;
     @api enableSubmitButton;
     @track showAnswer = false;
-    @track answeredCorrectly;
-
-    // ensure choices are unique
-    get uniqueKey() {
-        return parseInt(Math.random() * 1000, 10);
-    }
+    @track answeredCorrectly; 
 
     // disable choices for answered questions
     get unselectedChoices() {
         if (!this.question.answer) return this.question.choices.all;
         const _unselectedChoices = this.question.choices.all.filter(
-            choice => choice !== this.question.answer.submittedAnswer
+            (choice, index) => {
+                if (choice !== this.question.answer.submittedAnswer) {
+                    return {...choice, _key: index};
+                }
+                return false;
+            }
         );
 
         return _unselectedChoices;
@@ -24,23 +24,23 @@ export default class Question extends LightningElement {
     get isAnswerDefined() {
         return this.question.answer !== undefined;
     }
-    
+
     // need to track question changes. if there's a change, showAnswer = false;
     @api
     get question() {
         return this._question;
     }
-    
-    set question(value) { 
+
+    set question(value) {
         this._question = value;
         this.showAnswer = false;
     }
-    
+
     @api hideResult() {
         const codepen = this.template.querySelector('my-code-snippet');
         codepen.hideResult();
     }
-    
+
     @api showCodeSnippetResult() {
         const codepen = this.template.querySelector('my-code-snippet');
         codepen.seeAnswer();
