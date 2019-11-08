@@ -1,29 +1,83 @@
 [
     {
         "id": 1,
-        "question_string": "Which variable is modified in-place, or both?",
-        "codepenId": "eb5s41cp",
+        "question_string": "What is the expected sum?",
+        "codepenId": "4kgzhqLn",
         "choices": {
-            "correct": "both",
-            "all": ["x", "y", "both"]
+            "correct": "0.30000000000000004",
+            "all": ["0.3", "0.3004", "0.30000000000000004"]
         }
     },
     {
         "id": 2,
-        "question_string": "Which function can be called without error?",
-        "codepenId": "pr21uw0n",
+        "question_string": "What is the expected sum with large numbers?",
+        "codepenId": "s8La21m3",
         "choices": {
-            "correct": "hello",
-            "all": ["hello2", "hello", "both"]
+            "correct": "234536475683453440000",
+            "all": ["234536475683453440000", "234536475683453425367", "234536475683453425300"]
         }
     },
     {
         "id": 3,
-        "question_string": "What gets printed?",
-        "codepenId": "8v7t2wn0",
+        "question_string": "Let's try again with BigInt. What is the expected result?",
+        "codepenId": "kgyphum4",
         "choices": {
-            "correct": "undefined",
-            "all": ["woof", "undefined"]
+            "correct": "234536475683453425367",
+            "all": ["234536475683453440000", "234536475683453425367", "234536475683453425300"]
         }
-    }
+    },
+    {
+        "id": 4,
+        "question_string": "What is the expected sorted result?",
+        "codepenId": "x7h8uq9t",
+        "choices": {
+            "correct": "[11,12,7,8,9]",
+            "all": ["11,12,7,8,9","7,8,9,11,12","12,11,9,8,7"]
+        }
+    },
+    {
+        "id": 5,
+        "question_string": "Let's try again with comparator function. What is the expected result?",
+        "codepenId": "zsxy8qLt",
+        "choices": {
+            "correct": "ASC",
+            "all": ["ASC", "DESC", "not sorted"]
+        }
+    },
+    {
+        "id": 6,
+        "question_string": "What if we sort an array of objects by their numerical value? What is the expected result?",
+        "codepenId": "6eyLuskg",
+        "choices": {
+            "correct": "ASC",
+            "all": ["ASC", "DESC", "not sorted"]
+        }
+    },
+    {
+        "id": 7,
+        "question_string": "What if we sort an array of objects by their string value? What is the expected result?",
+        "codepenId": "tqkw86u4",
+        "choices": {
+            "correct": "ASC",
+            "all": ["ASC", "DESC", "not sorted"]
+        }
+    },
+    {
+        "id": 8,
+        "question_string": "ParseInt looks simple. What are the expected results?",
+        "codepenId": "spL7q9rm",
+        "choices": {
+            "correct": "10, 50, 0",
+            "all": ["10, 50, 0", "10, 32, 32", "10, 0, 0"]
+        }
+    },
+    {
+        "id": 9,
+        "question_string": "What if we parseInt a string vs a number? What are the expected results?",
+        "codepenId": "es7p6fdz",
+        "choices": {
+            "correct": "2, 9",
+            "all": ["0, 0", "2, 2", "2, 9"]
+        }
+    }                        
 ]
