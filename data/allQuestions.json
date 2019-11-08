@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "question_string": "What is the expected sum?",
+        "question_string": "Is 0.1 + 0.2 === 0.3?",
         "codepenId": "4kgzhqLn",
         "choices": {
-            "correct": "0.30000000000000004",
-            "all": ["0.3", "0.3004", "0.30000000000000004"]
+            "correct": "false",
+            "all": ["true", "false"]
         }
     },
     {
@@ -14,7 +14,11 @@
         "codepenId": "s8La21m3",
         "choices": {
             "correct": "234536475683453440000",
-            "all": ["234536475683453440000", "234536475683453425367", "234536475683453425300"]
+            "all": [
+                "234536475683453440000",
+                "234536475683453425367",
+                "234536475683453425300"
+            ]
         }
     },
     {
@@ -23,7 +27,11 @@
         "codepenId": "kgyphum4",
         "choices": {
             "correct": "234536475683453425367",
-            "all": ["234536475683453440000", "234536475683453425367", "234536475683453425300"]
+            "all": [
+                "234536475683453440000",
+                "234536475683453425367",
+                "234536475683453425300"
+            ]
         }
     },
     {
@@ -32,7 +40,7 @@
         "codepenId": "x7h8uq9t",
         "choices": {
             "correct": "[11,12,7,8,9]",
-            "all": ["11,12,7,8,9","7,8,9,11,12","12,11,9,8,7"]
+            "all": ["11,12,7,8,9", "7,8,9,11,12", "12,11,9,8,7"]
         }
     },
     {
@@ -49,8 +57,8 @@
         "question_string": "What if we sort an array of objects by their numerical value? What is the expected result?",
         "codepenId": "6eyLuskg",
         "choices": {
-            "correct": "ASC",
-            "all": ["ASC", "DESC", "not sorted"]
+            "correct": "ASC by value",
+            "all": ["ASC by value", "DESC by value", "not sorted"]
         }
     },
     {
@@ -58,8 +66,8 @@
         "question_string": "What if we sort an array of objects by their string value? What is the expected result?",
         "codepenId": "tqkw86u4",
         "choices": {
-            "correct": "ASC",
-            "all": ["ASC", "DESC", "not sorted"]
+            "correct": "ASC by name",
+            "all": ["ASC by name", "DESC by name", "not sorted"]
         }
     },
     {
@@ -76,8 +84,8 @@
         "question_string": "What if we parseInt a string vs a number? What are the expected results?",
         "codepenId": "es7p6fdz",
         "choices": {
-            "correct": "2, 9",
-            "all": ["0, 0", "2, 2", "2, 9"]
+            "correct": "2, 9, 2, 0",
+            "all": ["2, 9, 2, 0", "2, 0, 2, 0", "0, 0, 0, 0"]
         }
-    }                        
+    }
 ]
