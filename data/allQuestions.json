@@ -10,15 +10,11 @@
     },
     {
         "id": 2,
-        "question_string": "What is the expected sum with large numbers?",
+        "question_string": "Can numbers larger than Number.MAX_SAFE_INTEGER be safely incremented?",
         "codepenId": "s8La21m3",
         "choices": {
-            "correct": "234536475683453440000",
-            "all": [
-                "234536475683453440000",
-                "234536475683453425367",
-                "234536475683453425300"
-            ]
+            "correct": "false",
+            "all": ["true", "false"]
         }
     },
     {
@@ -36,11 +32,15 @@
     },
     {
         "id": 4,
-        "question_string": "What is the expected sorted result?",
+        "question_string": "What is the expected sorted result for these two arrays?",
         "codepenId": "x7h8uq9t",
         "choices": {
-            "correct": "[11,12,7,8,9]",
-            "all": ["11,12,7,8,9", "7,8,9,11,12", "12,11,9,8,7"]
+            "correct": "stringArr is sorted, numArr is not sorted",
+            "all": [
+                "stringArr is sorted, numArr is sorted",
+                "stringArr is sorted, numArr is not sorted",
+                "neither array is sorted"
+            ]
         }
     },
     {
