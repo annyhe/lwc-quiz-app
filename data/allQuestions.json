@@ -10,7 +10,7 @@
     },
     {
         "id": 2,
-        "question_string": "Can numbers larger than Number.MAX_SAFE_INTEGER be safely incremented?",
+        "question_string": "Can numbers larger than Number.MAX_SAFE_INTEGER be safely represented?",
         "codepenId": "s8La21m3",
         "choices": {
             "correct": "false",
@@ -22,11 +22,10 @@
         "question_string": "Let's try again with BigInt. What is the expected result?",
         "codepenId": "kgyphum4",
         "choices": {
-            "correct": "234536475683453425367",
+            "correct": "true",
             "all": [
-                "234536475683453440000",
-                "234536475683453425367",
-                "234536475683453425300"
+                "true",
+                "false"
             ]
         }
     },
@@ -37,7 +36,7 @@
         "choices": {
             "correct": "stringArr is sorted, numArr is not sorted",
             "all": [
-                "stringArr is sorted, numArr is sorted",
+                "both arrays are sorted in increasing order",
                 "stringArr is sorted, numArr is not sorted",
                 "neither array is sorted"
             ]
