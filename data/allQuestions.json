@@ -23,10 +23,7 @@
         "codepenId": "kgyphum4",
         "choices": {
             "correct": "true",
-            "all": [
-                "true",
-                "false"
-            ]
+            "all": ["true", "false"]
         }
     },
     {
