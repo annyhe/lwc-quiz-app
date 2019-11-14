@@ -50,15 +50,6 @@
     },
     {
         "id": 6,
-        "question_string": "What if we sort an array of objects by their numerical value? What is the expected result?",
-        "codepenId": "6eyLuskg",
-        "choices": {
-            "correct": "ASC by value",
-            "all": ["ASC by value", "DESC by value", "not sorted"]
-        }
-    },
-    {
-        "id": 7,
         "question_string": "What if we sort an array of objects by their string value? What is the expected result?",
         "codepenId": "tqkw86u4",
         "choices": {
@@ -67,7 +58,7 @@
         }
     },
     {
-        "id": 8,
+        "id": 7,
         "question_string": "ParseInt looks simple. What are the expected results?",
         "codepenId": "spL7q9rm",
         "choices": {
@@ -76,7 +67,7 @@
         }
     },
     {
-        "id": 9,
+        "id": 8,
         "question_string": "What if we parseInt a string vs a number? What are the expected results?",
         "codepenId": "es7p6fdz",
         "choices": {
