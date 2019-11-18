@@ -49,15 +49,6 @@
         }
     },
     {
-        "id": 6,
-        "question_string": "What if we sort an array of objects by their string value? What is the expected result?",
-        "codepenId": "tqkw86u4",
-        "choices": {
-            "correct": "ASC by name",
-            "all": ["ASC by name", "DESC by name", "not sorted"]
-        }
-    },
-    {
         "id": 7,
         "question_string": "ParseInt looks simple. What are the expected results?",
         "codepenId": "spL7q9rm",
