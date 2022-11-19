@@ -4,7 +4,7 @@
     "author": "Anny He",
     "bugs": "https://github.com/Anny He/quiz-app/issues",
     "dependencies": {
-        "lwc-services": "^1.2.2",
+        "lwc-services": "^3.2.2",
         "frameguard": "3.1.0"
     },
     "devDependencies": {
